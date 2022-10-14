@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
 }
+
 .row.carousel{
     padding: 1rem 0;
     display: flex;
@@ -21,9 +22,11 @@ body {
 
 
 }
-:root {
-    font-size: 1.1rem;
+.row.personalInfo {
+    margin: 2rem;
+
 }
+
 .form-control.me-2, .btn.btn-outline-success {
     margin: 1rem;
     background-color: #1c0e11;
@@ -43,13 +46,13 @@ body {
     justify-content: center;
     margin: 2rem;
     flex-wrap: wrap;
-
-
 }
+
 .col.buttons .btn:hover, .btn:focus {
     background-color: darkred;
     border: 3px solid darkred;
 }
+
 .registerbtn{
     background-color: green;
     border: none;
@@ -65,7 +68,6 @@ body {
     margin: 1rem;
 }
 
-
 .btn.btn-outline-success:hover ,.btn.btn-outline-success:focus ,.nav-link:hover{
     background-color: brown;
 }
@@ -73,10 +75,7 @@ body {
 .carousel-inner {
     border: 3px solid white;
 }
-h1 {
-    padding: 0.5rem;
-}
 
-p {
-    margin: 0.4rem;
+:root {
+    font-size: 1.1rem;
 }
