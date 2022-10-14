@@ -22,10 +22,7 @@ body {
 
 
 }
-.row.personalInfo {
-    margin: 2rem;
 
-}
 
 .form-control.me-2, .btn.btn-outline-success {
     margin: 1rem;
@@ -78,4 +75,12 @@ body {
 
 :root {
     font-size: 1.1rem;
+}
+
+.row.personalInfo {
+    margin: 2rem;
+
+}
+p {
+    margin: 1rem;
 }
