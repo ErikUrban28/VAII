@@ -1,17 +1,9 @@
-.container-fluid {
-    padding: 1rem;
-
-
-}
-
-.carousel-control-next-icon:hover, .carousel-control-prev-icon:hover {
-    background-color: red;
-}
 .row.text {
     text-align: center;
     display: flex;
     justify-content: center;
-
+    margin: 0;
+    padding: 0;
 }
 .row.carousel{
     padding: 1rem 0;
@@ -24,13 +16,34 @@ body {
     background: url(images/pexels-cottonbro-4722571.jpg) no-repeat center center fixed;
     background-size: cover;
     color: white;
+    box-sizing: content-box;
+
 }
-img {
+.form-control.me-2, .btn.btn-outline-success {
+    margin: 1rem;
+    background-color: #1c0e11;
+    border: 1px solid darkred;
+    color: white;
+}
+
+
+.nav-link{
+    color: white ;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn.btn-outline-success:hover ,.btn.btn-outline-success:focus ,.nav-link:hover{
+    background-color: brown;
+}
+
+.carousel-inner {
     border: 3px solid white;
 }
 h1 {
     padding: 0.5rem;
 }
+
 p {
     margin: 0.4rem;
 }

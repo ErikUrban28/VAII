@@ -1,36 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>TEST</title>
+    <title>Watchfest</title>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid ">
+    <div class="row justify-content-sm-between ">
+        <div class="col">
+            <nav class="navbar navbar-expand-sm navbar-dark ">
+                <div class="container ">
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#n_bar" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="n_bar">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Domov</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">O mne</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Novinky</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-md-6 col-xl-5 ">
+            <form class="d-flex ju">
+                <input class="form-control me-2" type="search" placeholder="Hladat" aria-label="Hladat">
+                <button class="btn btn-outline-success" type="submit">Hladat</button>
+            </form>
+        </div>
+    </div>
     <div class="row text">
         <div class="col-sm-8 col-md-6 ">
-        <h1>Moje hodnotenie filmov a serialov</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium alias cumque ea nihil nisi perferendis quia?
-            Ducimus, eos, magnam molestiae natus nemo neque perspiciatis quasi rerum saepe sed ut veniam?
-        </p>
-            <p>Culpa cupiditate eligendi quam.
-            Dolorem eveniet iure magni neque numquam optio quae quia reprehenderit tempora tenetur.
-            Accusamus minima minus officia placeat repellendus repudiandae soluta, ullam!
-            Blanditiis consectetur magnam quaerat tenetur.
+            <header><h1>Vitajte na stranke Watchfest</h1></header>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusantium alias cumque ea nihil nisi perferendis quia?
+                Ducimus, eos, magnam molestiae natus nemo neque perspiciatis quasi rerum saepe sed ut veniam?
             </p>
-        <p>Accusamus, at atque beatae consectetur cumque delectus deserunt dicta eius eos eveniet
-            excepturi ipsa iste, iusto laudantium modi, molestiae mollitia nam nobis perspiciatis possimus p
-            raesentium ratione recusandae similique temporibus vero!
-        </p>
-        <p>Aperiam at consectetur debit
-            is deserunt dolor ducimus, eligendi error facilis, illum ipsam ipsum itaque iure maxime neque nisi,
-            nobis nostrum perferendis quas quia quis reiciendis rerum suscipit tempora totam veritatis.
-        </p>
+            <p>Culpa cupiditate eligendi quam.
+                Dolorem eveniet iure magni neque numquam optio quae quia reprehenderit tempora tenetur.
+                Accusamus minima minus officia placeat repellendus repudiandae soluta, ullam!
+                Blanditiis consectetur magnam quaerat tenetur.
+            </p>
+            <p>Accusamus, at atque beatae consectetur cumque delectus deserunt dicta eius eos eveniet
+                excepturi ipsa iste, iusto laudantium modi, molestiae mollitia nam nobis perspiciatis possimus p
+                raesentium ratione recusandae similique temporibus vero!
+            </p>
+            <p>Aperiam at consectetur debit
+                is deserunt dolor ducimus, eligendi error facilis, illum ipsam ipsum itaque iure maxime neque nisi,
+                nobis nostrum perferendis quas quia quis reiciendis rerum suscipit tempora totam veritatis.
+            </p>
         </div>
     </div>
 
@@ -41,15 +66,16 @@
 
                 <!-- Indicators/dots -->
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#landing" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#landing" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#landing" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#landing" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 </div>
 
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="images/cinema.jpg" alt="cinema" class="d-block" style="width:100%">
-                        <div class="carousel-caption">
+                        <img src="images/cinema.jpg" alt="cinema" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
                             <h3>Filmy</h3>
                             <p>Sekcia Filmov</p>
                         </div>
@@ -66,9 +92,11 @@
                 <!-- Left and right controls/icons -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#landing" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#landing" data-bs-slide="next">
                     <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </div>
