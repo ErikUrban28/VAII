@@ -19,10 +19,7 @@ body {
     color: white;
     box-sizing: content-box;
     font-family: 'Roboto Condensed', sans-serif;
-
-
 }
-
 
 .form-control.me-2, .btn.btn-outline-success {
     margin: 1rem;
@@ -30,7 +27,6 @@ body {
     border: 1px solid darkred;
     color: white;
 }
-
 
 .nav-link{
     color: white ;
@@ -58,18 +54,35 @@ body {
     font-weight: bold;
     margin: 1rem;
 }
+
 .loginbtn{
     background-color: royalblue;
     border: none;
     padding: 0.5rem 5rem 0.5rem 5rem;
     margin: 1rem;
 }
+
 .buttonsSocial{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
-    margin: 1rem;
+    margin: 1rem 0.3rem 4rem 0.3rem;
     gap: 1rem;
+}
+
+.O-mne-nadpis {
+    display: flex;
+    margin: 0 0 0 3rem;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.btn.btn-primary {
+    border: none;
+    font-weight: bold;
+}
+.btn.btn-primary:hover, .btn.btn-primary:focus {
+    border: .3rem solid darkgreen;
 }
 
 .btn.btn-outline-success:hover ,.btn.btn-outline-success:focus ,.nav-link:hover{
