@@ -64,6 +64,13 @@ body {
     padding: 0.5rem 5rem 0.5rem 5rem;
     margin: 1rem;
 }
+.buttonsSocial{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+    gap: 1rem;
+}
 
 .btn.btn-outline-success:hover ,.btn.btn-outline-success:focus ,.nav-link:hover{
     background-color: brown;
