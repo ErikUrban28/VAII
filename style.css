@@ -100,12 +100,20 @@ body {
 
 .btn.btn-primary:hover, .btn.btn-primary:focus {
     border: .3rem solid darkgreen;
+    background-color: green;
+
 }
 
 .btn.btn-outline-success:hover, .btn.btn-outline-success:focus, .nav-link:hover {
     background-color: brown;
 }
-
+.link {
+    font-weight: bold;
+    color: white;
+}
+.link:hover, .link:focus{
+    color: green;
+}
 .carousel-inner {
     border: 0.1rem solid white;
 
@@ -118,7 +126,9 @@ body {
 .row.personalInfo {
     margin: 2rem;
 }
-
+.sign-in {
+    background-color: darkgreen;
+}
 p {
     margin: 1rem 0 1rem 0;
 }
