@@ -43,7 +43,7 @@ body {
 
 .col.buttons .btn:hover, .btn:focus {
     background-color: darkred;
-    border: 3px solid darkred;
+    border: 3px solid white;
 }
 
 .registerbtn {
