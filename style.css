@@ -71,7 +71,7 @@ body {
     gap: 1rem;
 }
 
-.O-mne-nadpis {
+.o-mne-nadpis {
     display: flex;
     margin: 0 0 0 3rem;
     flex-wrap: nowrap;
