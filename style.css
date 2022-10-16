@@ -17,7 +17,6 @@ body {
     background: url(images/pexels-cottonbro-4722571.jpg) no-repeat center center fixed;
     background-size: cover;
     color: white;
-
     font-family: 'Roboto Condensed', sans-serif;
     overflow-x: hidden;
 }
@@ -96,6 +95,7 @@ body {
     padding: 1rem;
     background-color: #1c0e11;
 }
+
 .novinka .display-6 {
     margin: 2rem 0 0 0 ;
 }
@@ -103,21 +103,23 @@ body {
 .btn.btn-primary:hover, .btn.btn-primary:focus {
     border: .3rem solid darkgreen;
     background-color: green;
-
 }
 
 .btn.reg {
    background-color: green;
 }
+
 .nav-item {
     border-radius: 1rem;
     background-color: gray;
     margin: .5rem;
 }
+
 .nav-item .prihlasenie {
     background-color: royalblue;
     border-radius: 1rem;
 }
+
 .nav-item .registracia {
     background-color: green;
     border-radius: 1rem;
@@ -126,45 +128,51 @@ body {
 .btn.btn-outline-success:hover, .btn.btn-outline-success:focus, .nav-link:hover, .nav-link:focus {
     background-color: brown;
 }
+
 .link {
     font-weight: bold;
     color: white;
 }
+
 .link:hover, .link:focus ,.novinkyNadpisy:hover ,.novinkyNadpisy:focus{
     color: green;
 }
+
 .carousel-inner {
     border: 0.1rem solid white;
-
 }
 
 .novinkyNadpisy {
     text-decoration: none;
     color: white;
 }
+
 :root {
     font-size: 1.1rem;
     overflow: auto;
     box-sizing: border-box;
-
 }
-
 
 .row.personalInfo {
     margin: 2rem;
 }
+
 .sign-in {
     background-color: royalblue;
 }
+
 p {
     margin: 1rem 0 1rem 0;
 }
+
 div .img {
     border: 1rem solid white;
 }
+
 h3 {
     color: white;
 }
+
 .btn-floating {
     color: white;
 }
