@@ -145,6 +145,10 @@ body {
 :root {
     font-size: 1.1rem;
     overflow: auto;
+
+}
+html {
+    min-height: 100%;
 }
 
 .row.personalInfo {
