@@ -22,6 +22,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .form-control.me-2, .btn.btn-outline-success {
     margin: 1rem;
     background-color: #1c0e11;
@@ -143,6 +144,7 @@ body {
 }
 :root {
     font-size: 1.1rem;
+    overflow: auto;
 }
 
 .row.personalInfo {
@@ -163,3 +165,4 @@ h3 {
 .btn-floating {
     color: white;
 }
+
