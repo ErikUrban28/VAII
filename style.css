@@ -104,14 +104,31 @@ body {
 
 }
 
-.btn.btn-outline-success:hover, .btn.btn-outline-success:focus, .nav-link:hover {
+.btn.reg {
+   background-color: green;
+}
+.nav-item {
+    border-radius: 1rem;
+    background-color: gray;
+    margin: .5rem;
+}
+.nav-item .prihlasenie {
+    background-color: royalblue;
+    border-radius: 1rem;
+}
+.nav-item .registracia {
+    background-color: green;
+    border-radius: 1rem;
+}
+
+.btn.btn-outline-success:hover, .btn.btn-outline-success:focus, .nav-link:hover, .nav-link:focus {
     background-color: brown;
 }
 .link {
     font-weight: bold;
     color: white;
 }
-.link:hover, .link:focus{
+.link:hover, .link:focus ,.novinkyNadpisy:hover ,.novinkyNadpisy:focus{
     color: green;
 }
 .carousel-inner {
@@ -119,6 +136,10 @@ body {
 
 }
 
+.novinkyNadpisy {
+    text-decoration: none;
+    color: white;
+}
 :root {
     font-size: 1.1rem;
 }
@@ -127,7 +148,7 @@ body {
     margin: 2rem;
 }
 .sign-in {
-    background-color: darkgreen;
+    background-color: royalblue;
 }
 p {
     margin: 1rem 0 1rem 0;
@@ -136,5 +157,8 @@ div .img {
     border: 1rem solid white;
 }
 h3 {
+    color: white;
+}
+.btn-floating {
     color: white;
 }
