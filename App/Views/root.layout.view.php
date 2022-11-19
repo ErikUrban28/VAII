@@ -20,12 +20,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/bootstrap.css">
 
     <title><?= \App\Config\Configuration::APP_NAME ?></title>
 </head>
 <body>
-<div class="container-fluid ">
+<div class="container-fluid  ">
     <div class="row justify-content-sm-between ">
         <div class="col">
             <nav class="navbar navbar-expand-sm navbar-dark ">
@@ -38,7 +37,7 @@
                         <ul class="navbar-nav ">
                             <li class="nav-item active"><a class="nav-link" href="?c=home">Domov</a></li>
                             <li class="nav-item"><a class="nav-link" href="?c=home&a=about">Autor</a></li>
-                            <li class="nav-item"><a class="nav-link" href="?c=news">Novinky</a></li>
+                            <li class="nav-item"><a class="nav-link" href="?c=articles&a=articles">Novinky</a></li>
                             <li class="nav-item"><a class="nav-link registracia" href="?c=auth&a=register">Registracia</a>
                             </li>
                             <?php if (!$auth->isLogged()) { ?>
