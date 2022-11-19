@@ -20,11 +20,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
 
     <title><?= \App\Config\Configuration::APP_NAME ?></title>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="row justify-content-sm-between ">
         <div class="col">
             <nav class="navbar navbar-expand-sm navbar-dark ">

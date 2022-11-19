@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col d-flex justify-content-md-center o-mne-nadpis">
         <h1 class="display-1 ">Vitajte na stranke Watchfest</h1>
@@ -27,7 +28,7 @@
 </div>
 </div>
 
-<div class="row carousel">
+<div class="row carousel ">
     <div class="col-sm-8 col-lg-6 col-xxl-4 ">
         <div class="row m-2">
 
@@ -68,7 +69,7 @@
     </div>
 </div>
 <div class="row ">
-    <div class="col buttons">
+    <div class="col buttons ">
         <a href="?c=auth&a=register" class="btn btn-primary registerbtn">Registracia</a>
         <a href="<?= \App\Config\Configuration::LOGIN_URL ?>" class="btn btn-secondary loginbtn">Prihlasenie</a>
     </div>
