@@ -14,7 +14,7 @@
 }
 
 body {
-    background: url(images/pexels-cottonbro-4722571.jpg) no-repeat center center fixed;
+    background: url(../images/pexels-cottonbro-4722571.jpg) no-repeat center center fixed;
     background-size: cover;
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
@@ -115,7 +115,7 @@ body {
     margin: .5rem;
 }
 
-.nav-item .prihlasenie {
+.nav-item  .prihlasenie, .odhlasenie {
     background-color: royalblue;
     border-radius: 1rem;
 }

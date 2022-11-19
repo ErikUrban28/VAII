@@ -5,50 +5,60 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
+
     <title><?= \App\Config\Configuration::APP_NAME ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-            crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="public/css/styl.css">
-    <script src="public/js/script.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <title><?= \App\Config\Configuration::APP_NAME ?></title>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="?c=home">
-            <img src="public/images/vaiicko_logo.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
-                 title="<?= \App\Config\Configuration::APP_NAME ?>">
-        </a>
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="?c=home&a=contact">Kontakt</a>
-            </li>
-        </ul>
-        <?php if ($auth->isLogged()) { ?>
-            <span class="navbar-text">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="?c=auth&a=logout">Odhlásenie</a>
-                </li>
-            </ul>
-        <?php } else { ?>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= \App\Config\Configuration::LOGIN_URL ?>">Prihlásenie</a>
-                </li>
-            </ul>
-        <?php } ?>
+<div class="container-fluid">
+    <div class="row justify-content-sm-between ">
+        <div class="col">
+            <nav class="navbar navbar-expand-sm navbar-dark ">
+                <div class="container ">
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#n_bar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="n_bar">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item active"><a class="nav-link" href="?c=home">Domov</a></li>
+                            <li class="nav-item"><a class="nav-link" href="?c=home&a=about">Autor</a></li>
+                            <li class="nav-item"><a class="nav-link" href="?c=news">Novinky</a></li>
+                            <li class="nav-item"><a class="nav-link registracia" href="?c=auth&a=register">Registracia</a>
+                            </li>
+                            <?php if (!$auth->isLogged()) { ?>
+                                <li class="nav-item"><a class="nav-link odhlasenie" href="?c=auth&a=logout">Odhlásenie</a></li>
+                            <?php } else { ?>
+                                <li class="nav-item"><a class="nav-link prihlasenie" href="?c=auth">Prihlasenie</a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-sm-9 col-lg-5 ">
+            <form class="d-flex ju">
+                <input class="form-control me-2" type="search" placeholder="Hladat" aria-label="Hladat">
+                <button class="btn btn-outline-success" type="submit">Hladat</button>
+            </form>
+        </div>
     </div>
-</nav>
-<div class="container-fluid mt-3">
-    <div class="web-content">
-        <?= $contentHTML ?>
-    </div>
+
 </div>
+<?= $contentHTML ?>
 </body>
 </html>

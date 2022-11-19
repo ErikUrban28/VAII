@@ -1,48 +1,3 @@
-<!DOCTYPE html>
-<html lang="sk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <title>Watchfest: Autor</title>
-</head>
-<body>
-<div class="container-fluid ">
-    <div class="row justify-content-sm-between ">
-        <div class="col">
-            <nav class="navbar navbar-expand-sm navbar-dark ">
-                <div class="container ">
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#n_bar" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse " id="n_bar">
-                        <ul class="navbar-nav ">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Domov</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">Autor</a></li>
-                            <li class="nav-item"><a class="nav-link" href="news.html">Novinky</a></li>
-                            <li class="nav-item"><a class="nav-link registracia" href="register.html">Registracia</a></li>
-                            <li class="nav-item"><a class="nav-link prihlasenie" href="login.html">Prihlasenie</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="col-sm-9 col-lg-5 ">
-            <form class="d-flex ju">
-                <input class="form-control me-2" type="search" placeholder="Hladat" aria-label="Hladat">
-                <button class="btn btn-outline-success" type="submit">Hladat</button>
-            </form>
-        </div>
-    </div>
-</div>
 <div class="row">
     <div class="col d-flex justify-content-md-center o-mne-nadpis">
         <h1 class="display-1 ">Autor</h1>
@@ -52,7 +7,7 @@
 <div class="container ">
     <div class="row personalInfo ">
         <div class="col-sm-7 col-md-5 meImg">
-            <img src="images/img_avatar3.png" class="img-fluid" alt="Autor">
+            <img src="/public/images/img_avatar3.png" class="img-fluid" alt="Autor">
         </div>
         <div class="col-sm-11 col-md-11 col-lg-7 ">
             <p >
@@ -81,7 +36,7 @@
 <div class="container-fluid ">
     <div class="row  ">
         <div class="d-flex justify-content-md-center justify-content-sm-start">
-                <strong>Odkazy na socialne site a kontakt : </strong>
+            <strong>Odkazy na socialne site a kontakt : </strong>
         </div>
 
     </div>
@@ -102,5 +57,3 @@
         </div>
     </div>
 </div>
-</body>
-</html>
