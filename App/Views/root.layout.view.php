@@ -37,7 +37,7 @@
                         <ul class="navbar-nav ">
                             <li class="nav-item active"><a class="nav-link" href="?c=home">Domov</a></li>
                             <li class="nav-item"><a class="nav-link" href="?c=home&a=about">Autor</a></li>
-                            <li class="nav-item"><a class="nav-link" href="?c=articles&a=articles">Novinky</a></li>
+                            <li class="nav-item"><a class="nav-link" href="?c=articles&a=articles">Clanky</a></li>
                             <li class="nav-item"><a class="nav-link registracia" href="?c=auth&a=register">Registracia</a>
                             </li>
                             <?php if (!$auth->isLogged()) { ?>
