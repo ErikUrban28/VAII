@@ -5,28 +5,26 @@
             <h1 class="display-1 mb-3 text-center">Registracia</h1>
             <form  method="post" action="?c=auth&a=store">
                 <div class="form-outline mb-4">
-                    <input type="text" name="login" placeholder="Login" class="form-control">
-                    <label class="form-label" for="login"></label>
+                    <label class="d-block">
+                        <input type="text" name="login" placeholder="Login" class="form-control">
+                    </label>
+
                 </div>
 
 
                 <div class="form-outline mb-4">
-                    <input type="email" name="email" placeholder="Email" class="form-control">
-                    <label class="form-label" for="email"></label>
+                    <label class="d-block">
+                        <input type="email" name="email" placeholder="Email" class="form-control">
+                    </label>
                 </div>
 
 
                 <div class="form-outline mb-4">
-                    <input type="password" name="password" placeholder="Heslo" class="form-control">
-                    <label class="form-label" for="password"></label>
+                    <label class="d-block">
+                        <input type="password" name="password" placeholder="Heslo" class="form-control">
+                    </label>
                 </div>
 
-
-                <div class="form-outline mb-4">
-                    <input type="password" name="pepeatPassword" placeholder="Opatovne zadajte heslo"
-                           class="form-control">
-                    <label class="form-label" for="RepeatPassword"> </label>
-                </div>
                 <div class="row">
                     <button type="submit"name="submit" class="btn btn-primary btn-block reg">Registrovat</button>
                 </div>

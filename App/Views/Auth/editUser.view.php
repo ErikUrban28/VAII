@@ -15,24 +15,17 @@
                 <?php } ?>
 
                 <div class="form-outline m-4">
-                    <input type="text" name="login" placeholder="Login" class="form-control"
-                           value="<?= $data->getLogin() ?>">
-                    <label class="form-label" for="login"></label>
-                    <input type="email" name="email" placeholder="Email" class="form-control"
-                           value="<?= $data->getEmail() ?>">
-                    <label class="form-label" for="email"></label>
-                    <input type="password" name="password" placeholder="Heslo" class="form-control">
-                    <label class="form-label" for="password"></label>
-                    <input type="password" name="pepeatPassword" placeholder="Opatovne zadajte heslo"
-                           class="form-control">
-
-                </div>
-                <div class="row justify-content-end ">
-                    <div class="col-sm-8 col-md-5 justify-content-end">
-                        <label class="form-label " for="RepeatPassword"> </label>
-                        <button type="submit" name="submit" class="btn btn-primary btn-block reg m-4 ">Editovat</button>
-                    </div>
-
+                    <label class="d-block mt-3">
+                        <input type="text" name="login" placeholder="Login" class="form-control"
+                               value="<?= $data->getLogin() ?>">
+                    </label>
+                    <label class="d-block mt-3">
+                        <input type="email" name="email" placeholder="Email" class="form-control"
+                    </label>
+                    <label class="d-block mt-3" >
+                        <input type="password" name="password" placeholder="Heslo" class="form-control">
+                    </label>
+                    <button type="submit" name="submit" class="btn btn-primary btn-block reg mt-3">Editovat</button>
                 </div>
 
 

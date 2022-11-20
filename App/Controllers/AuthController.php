@@ -14,6 +14,7 @@ use App\Models\User;
  */
 class AuthController extends AControllerBase
 {
+
     /**
      *
      * @return \App\Core\Responses\RedirectResponse|\App\Core\Responses\Response
@@ -53,6 +54,14 @@ class AuthController extends AControllerBase
         return $this->redirect('?c=home');
     }
 
+    public function authorize($action): bool
+    {
+        return match ($action) {
+            "create", "store", "edit", "delete" => $this->app->getAuth()->isLogged(),
+            default => true,
+        };
+    }
+
     public function register()
     {
         return $this->html(new User(),viewName: 'register');
@@ -65,7 +74,6 @@ class AuthController extends AControllerBase
         $user = $id ? User::getOne($id) : new User();
         $user->setLogin($this->request()->getValue('login'));
         $user->setEmail($this->request()->getValue('email'));
-        //if ($this->request()->getValue('registerPassword') === $this->request()->getValue('registerRepeatPassword')) {
         $user->setPassword($this->request()->getValue('password'));
         $user->save();
         return $this->redirect("?c=home");
