@@ -20,7 +20,7 @@
                                value="<?= $data->getLogin() ?>">
                     </label>
                     <label class="d-block mt-3">
-                        <input type="email" name="email" placeholder="Email" class="form-control"
+                        <input type="email" name="email" placeholder="Email" class="form-control"  value="<?= $data->getEmail() ?>">
                     </label>
                     <label class="d-block mt-3" >
                         <input type="password" name="password" placeholder="Heslo" class="form-control">

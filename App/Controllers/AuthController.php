@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Auth\Authenticator;
 use App\Config\Configuration;
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
@@ -57,7 +58,7 @@ class AuthController extends AControllerBase
     public function authorize($action): bool
     {
         return match ($action) {
-            "create", "store", "edit", "delete" => $this->app->getAuth()->isLogged(),
+            "edit", "delete" => $this->app->getAuth()->isLogged(),
             default => true,
         };
     }
@@ -69,14 +70,14 @@ class AuthController extends AControllerBase
     public function store(): Response
     {
         //TODO: id ak je neplatne
-
         $id = $this->request()->getValue('id');
         $user = $id ? User::getOne($id) : new User();
         $user->setLogin($this->request()->getValue('login'));
         $user->setEmail($this->request()->getValue('email'));
-        $user->setPassword($this->request()->getValue('password'));
+        $user->setHash(Authenticator::createHash($this->request()->getValue('password')));
         $user->save();
-        return $this->redirect("?c=home");
+        $_SESSION['user'] = $user->getLogin();
+        return $this->redirect("?c=admin");
     }
 
     public

@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="row">
-                    <button type="submit"name="submit" class="btn btn-primary btn-block reg">Registrovat</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-block reg">Registrovat</button>
                 </div>
 
             </form>

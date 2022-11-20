@@ -3,20 +3,19 @@
 namespace App\Auth;
 
 use App\Core\IAuthenticator;
+use App\Models\User;
 
 /**
- * Class DummyAuthenticator
+ * Class Authenticator
  * Basic implementation of user authentication
  * @package App\Auth
  */
-class DummyAuthenticator implements IAuthenticator
+class Authenticator implements IAuthenticator
 {
-    const LOGIN = "admin";
-    const PASSWORD_HASH = '$2y$10$GRA8D27bvZZw8b85CAwRee9NH5nj4CQA6PDFMc90pN9Wi4VAWq3yq'; // admin
-    const USERNAME = "Admin";
+
 
     /**
-     * DummyAuthenticator constructor
+     * Authenticator constructor
      */
     public function __construct()
     {
@@ -30,14 +29,22 @@ class DummyAuthenticator implements IAuthenticator
      * @return bool
      * @throws \Exception
      */
+
+    static function createHash($password)
+    {
+        return password_hash($password,PASSWORD_BCRYPT);
+    }
+
     function login($login, $password): bool
     {
-        if ($login == self::LOGIN && password_verify($password, self::PASSWORD_HASH)) {
-            $_SESSION['user'] = self::USERNAME;
-            return true;
-        } else {
-            return false;
+        $users = User::getAll();
+        foreach ($users as $user) {
+            if ($login == $user->getLogin() && password_verify($password, $user->getHash())) {
+                $_SESSION['user'] = $user->getLogin();
+                return true;
+            }
         }
+        return false;
     }
 
     /**
