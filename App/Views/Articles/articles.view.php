@@ -4,6 +4,8 @@
 <?php
 use App\Models\Article;
 /** @var Article[] $data*/
+/** @var \App\Core\IAuthenticator $auth */
+
 foreach ($data as $article) {?>
     <div class="row novinka">
         <div class="col-sm-12 col-lg-6">
@@ -18,6 +20,9 @@ foreach ($data as $article) {?>
             </p>
 
         </div>
+
+        <?php
+        if($auth->isLogged()){ ?>
         <div class="row m-0 p-0">
             <div class="col-xl-12  justify-content-between d-flex">
                 <div>
@@ -32,12 +37,16 @@ foreach ($data as $article) {?>
 
             </div>
         </div>
+            <?php }?>
     </div>
 <?php }
 ?>
+    <?php if($auth->isLogged()){ ?>
     <div class="row novinka text-center ">
         <a href="?c=articles&a=create" class="novinkyNadpisy"><h2>Vytvor novy clanok</h2></a>
     </div>
+    <?php }
+    ?>
 </div>
 
 

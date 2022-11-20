@@ -40,7 +40,7 @@
                             <li class="nav-item"><a class="nav-link" href="?c=articles&a=articles">Clanky</a></li>
                             <li class="nav-item"><a class="nav-link registracia" href="?c=auth&a=register">Registracia</a>
                             </li>
-                            <?php if (!$auth->isLogged()) { ?>
+                            <?php if ($auth->isLogged()) { ?>
                                 <li class="nav-item"><a class="nav-link odhlasenie" href="?c=auth&a=logout">Odhlásenie</a></li>
                             <?php } else { ?>
                                 <li class="nav-item"><a class="nav-link prihlasenie" href="?c=auth">Prihlasenie</a></li>

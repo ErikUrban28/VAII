@@ -17,7 +17,7 @@ class AdminController extends AControllerBase
      * @param $action
      * @return bool
      */
-    public function authorize($action)
+    public function authorize($action): bool
     {
         return $this->app->getAuth()->isLogged();
     }

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Config\Configuration;
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
+use App\Models\User;
 
 /**
  * Class AuthController
@@ -28,6 +29,7 @@ class AuthController extends AControllerBase
      */
     public function login(): Response
     {
+        //$a = password_hash("gfsgsgds",algo: PASSWORD_BCRYPT);
         $formData = $this->app->getRequest()->getPost();
         $logged = null;
         if (isset($formData['submit'])) {
@@ -48,11 +50,30 @@ class AuthController extends AControllerBase
     public function logout(): Response
     {
         $this->app->getAuth()->logout();
-        return $this->html();
+        return $this->redirect('?c=home');
     }
 
-    public function register() : Response
+    public function register(): Response
     {
-        return $this->html();
+        //TODO: id ak je neplatne
+
+        $formData = $this->app->getRequest()->getPost();
+        $logged = null;
+        if (isset($formData['submit'])) {
+            $id = $this->request()->getValue('id');
+            $user = $id ? User::getOne($id) : new User();
+            $user->setLogin($this->request()->getValue('login'));
+            $user->setEmail($this->request()->getValue('registerEmail'));
+            //if ($this->request()->getValue('registerPassword') === $this->request()->getValue('registerRepeatPassword')) {
+            $user->setPassword($this->request()->getValue('registerPassword'));
+            // }
+            $user->save();
+//            $logged = true;
+//            $logged = $this->app->getAuth()->login($user->getLogin(), $user->getPassword());
+//            if ($logged) {
+//                return $this->redirect('?c=admin');//           }
+        }
+        $data = ($logged === false ? ['message' => 'Zlý login alebo heslo!'] : []);
+        return $this->html($data);
     }
 }
