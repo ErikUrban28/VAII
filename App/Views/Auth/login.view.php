@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-outline ">
                     <input name="password" type="password" id="password" class="form-control"
-                           placeholder="Heslo" required>
+                           placeholder="Heslo" required autofocus>
                     <label class="form-label" for="password"></label>
 
                 </div>

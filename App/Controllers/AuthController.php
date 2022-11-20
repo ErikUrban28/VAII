@@ -77,6 +77,9 @@ class AuthController extends AControllerBase
             $user->setEmail($this->request()->getValue('email'));
             $user->setHash($this->app->getAuth()->createHash($this->request()->getValue('password')));
             $user->save();
+            if($isEdit) {
+                return $this->redirect("?c=auth&a=users");
+            }
             $_SESSION['user'] = $user->getLogin();
             return $this->redirect("?c=admin");
         }

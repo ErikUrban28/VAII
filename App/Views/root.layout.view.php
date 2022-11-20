@@ -26,7 +26,7 @@
 <body>
 <div class="container-fluid  ">
     <div class="row ">
-        <nav class="navbar navbar-expand-sm navbar-dark">
+        <nav class="navbar navbar-expand-md navbar-dark">
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#n_bar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,6 +43,8 @@
                     <?php if ($auth->isLogged()) { ?>
                         <li class="nav-item"><a class="nav-link odhlasenie"href="?c=auth&a=logout">Odhlásenie</a></li>
                         <li class="nav-item"><a class="nav-link odhlasenie"href="?c=auth&a=users">Pouzivatelia</a></li>
+                        <li class="nav-item"><a class="nav-link">
+                                <?= $auth->getLoggedUserName()?></a></li>
                     <?php } else { ?>
                         <li class="nav-item"><a class="nav-link prihlasenie" href="?c=auth">Prihlasenie</a></li>
                     <?php } ?>

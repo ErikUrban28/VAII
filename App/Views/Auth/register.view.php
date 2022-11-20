@@ -9,7 +9,7 @@
             <form  method="post" action="?c=auth&a=register">
                 <div class="form-outline mb-4">
                     <label class="d-block">
-                        <input type="text" name="login" placeholder="Login" class="form-control">
+                        <input type="text" name="login" placeholder="Login" class="form-control" required autofocus>
                     </label>
 
                 </div>
@@ -17,14 +17,14 @@
 
                 <div class="form-outline mb-4">
                     <label class="d-block">
-                        <input type="email" name="email" placeholder="Email" class="form-control">
+                        <input type="email" name="email" placeholder="Email" class="form-control" required autofocus>
                     </label>
                 </div>
 
 
                 <div class="form-outline mb-4">
                     <label class="d-block">
-                        <input type="password" name="password" placeholder="Heslo" class="form-control">
+                        <input type="password" name="password" placeholder="Heslo" class="form-control" required autofocus>
                     </label>
                 </div>
 
