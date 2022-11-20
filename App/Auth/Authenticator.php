@@ -30,8 +30,8 @@ class Authenticator implements IAuthenticator
      * @throws \Exception
      */
 
-    static function createHash($password)
-    {
+     function createHash($password): string
+     {
         return password_hash($password,PASSWORD_BCRYPT);
     }
 
@@ -45,6 +45,14 @@ class Authenticator implements IAuthenticator
             }
         }
         return false;
+    }
+
+    function register($login) {
+         if(count(User::getAll("login='$login'")) == 0) {
+             return true;
+         } else {
+             return false;
+         }
     }
 
     /**

@@ -31,7 +31,6 @@ class AuthController extends AControllerBase
      */
     public function login(): Response
     {
-        //$a = password_hash("gfsgsgds",algo: PASSWORD_BCRYPT);
         $formData = $this->app->getRequest()->getPost();
         $logged = null;
         if (isset($formData['submit'])) {
@@ -65,40 +64,41 @@ class AuthController extends AControllerBase
 
     public function register()
     {
-        return $this->html(new User(),viewName: 'register');
-    }
-    public function store(): Response
-    {
         //TODO: id ak je neplatne
-        $id = $this->request()->getValue('id');
-        $user = $id ? User::getOne($id) : new User();
-        $user->setLogin($this->request()->getValue('login'));
-        $user->setEmail($this->request()->getValue('email'));
-        $user->setHash(Authenticator::createHash($this->request()->getValue('password')));
-        $user->save();
-        $_SESSION['user'] = $user->getLogin();
-        return $this->redirect("?c=admin");
+        $formData = $this->app->getRequest()->getPost();
+        $isSubmit = isset($formData['submit']);
+        $login = $this->request()->getValue('login');
+        $unregistered = $this->app->getAuth()->register($login);
+        if ($unregistered && $isSubmit) {
+            $id = $this->request()->getValue('id');
+            $user = $id ? User::getOne($id) : new User();
+            $user->setLogin($login);
+            $user->setEmail($this->request()->getValue('email'));
+            $user->setHash($this->app->getAuth()->createHash($this->request()->getValue('password')));
+            $user->save();
+            $_SESSION['user'] = $user->getLogin();
+            return $this->redirect("?c=admin");
+        }
+        $data = ($unregistered === false ? ['message' => 'Login je uz obsadeny'] : []);
+        return $this->html($data, viewName: 'register');
     }
 
-    public
-    function users()
+    public function users()
     {
         $users = User::getAll();
         return $this->html($users);
     }
 
-    public
-    function edit()
+    public function edit()
     {
         //todo: kontrolovat id
         $userToEdit = User::getOne($this->request()->getValue('id'));
         return $this->html($userToEdit, viewName: 'editUser');
     }
 
-    public
-    function delete()
+    public function delete()
     {
-        //todo: kontrolovat id
+        //todo: kontrolovat id, nemoze vymazat sameho seba
         $userToDelete = User::getOne($this->request()->getValue('id'));
         $userToDelete?->delete();
         return $this->redirect("?c=auth&a=users");

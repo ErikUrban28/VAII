@@ -4,7 +4,7 @@
         <div class="col-sm-8 col-md-5">
             <h1 class="display-1 text-center">Editacia</h1>
 
-            <form method="post" action="?c=auth&a=store">
+            <form method="post" action="?c=auth&a=register">
                 <?php
                 /** @var User $data */
 

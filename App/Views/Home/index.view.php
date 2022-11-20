@@ -26,7 +26,6 @@
         </p>
     </div>
 </div>
-</div>
 
 <div class="row carousel ">
     <div class="col-sm-8 col-lg-6 col-xxl-4 ">

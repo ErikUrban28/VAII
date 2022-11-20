@@ -8,7 +8,6 @@ use App\Models\User;
 foreach ($data as $user ){?>
     <div class="row novinka">
         <div class="col ">
-            <h1 class="display-6">ID: <?= $user->getID()?></h1>
             <h5>Login : <?= $user->getLogin()?></h5>
             <h5>Email : <?= $user->getEmail()?></h5>
         </div>
