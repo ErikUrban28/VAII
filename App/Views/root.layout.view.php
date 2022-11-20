@@ -25,39 +25,31 @@
 </head>
 <body>
 <div class="container-fluid  ">
-    <div class="row justify-content-sm-between ">
-        <div class="col">
-            <nav class="navbar navbar-expand-sm navbar-dark ">
-                <div class="container ">
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#n_bar" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse " id="n_bar">
-                        <ul class="navbar-nav ">
-                            <li class="nav-item active"><a class="nav-link" href="?c=home">Domov</a></li>
-                            <li class="nav-item"><a class="nav-link" href="?c=home&a=about">Autor</a></li>
-                            <li class="nav-item"><a class="nav-link" href="?c=articles&a=articles">Clanky</a></li>
-                            <li class="nav-item"><a class="nav-link registracia" href="?c=auth&a=register">Registracia</a>
-                            </li>
-                            <?php if ($auth->isLogged()) { ?>
-                                <li class="nav-item"><a class="nav-link odhlasenie" href="?c=auth&a=logout">Odhlásenie</a></li>
-                            <?php } else { ?>
-                                <li class="nav-item"><a class="nav-link prihlasenie" href="?c=auth">Prihlasenie</a></li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="col-sm-9 col-lg-5 ">
-            <form class="d-flex ju">
-                <input class="form-control me-2" type="search" placeholder="Hladat" aria-label="Hladat">
-                <button class="btn btn-outline-success" type="submit">Hladat</button>
-            </form>
+    <div class="row ">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#n_bar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="n_bar">
+
+                <div class="col d-flex justify-content-around">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="?c=home">Domov</a></li>
+                    <li class="nav-item"><a class="nav-link" href="?c=home&a=about">Autor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="?c=articles&a=articles">Clanky</a></li>
+                    <li class="nav-item"><a class="nav-link registracia"
+                                            href="?c=auth&a=register">Registracia</a></li>
+                    <?php if ($auth->isLogged()) { ?>
+                        <li class="nav-item"><a class="nav-link odhlasenie"href="?c=auth&a=logout">Odhlásenie</a></li>
+                        <li class="nav-item"><a class="nav-link odhlasenie"href="?c=auth&a=users">Pouzivatelia</a></li>
+                    <?php } else { ?>
+                        <li class="nav-item"><a class="nav-link prihlasenie" href="?c=auth">Prihlasenie</a></li>
+                    <?php } ?>
+                </ul>
+        </nav>
         </div>
     </div>
-
 </div>
 <?= $contentHTML ?>
 </body>

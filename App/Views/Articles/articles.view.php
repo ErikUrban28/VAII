@@ -24,7 +24,7 @@ foreach ($data as $article) {?>
         <?php
         if($auth->isLogged()){ ?>
         <div class="row m-0 p-0">
-            <div class="col-xl-12  justify-content-between d-flex">
+            <div class="col-xl-12  justify-content-between d-flex mt-2">
                 <div>
                     <a href="?c=articles&a=edit&id=<?= $article->getId() ?>" class="btn btn-danger ">Upravit</a>
                 </div>

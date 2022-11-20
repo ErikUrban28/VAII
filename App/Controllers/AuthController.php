@@ -53,27 +53,45 @@ class AuthController extends AControllerBase
         return $this->redirect('?c=home');
     }
 
-    public function register(): Response
+    public function register()
+    {
+        return $this->html(new User(),viewName: 'register');
+    }
+    public function store(): Response
     {
         //TODO: id ak je neplatne
 
-        $formData = $this->app->getRequest()->getPost();
-        $logged = null;
-        if (isset($formData['submit'])) {
-            $id = $this->request()->getValue('id');
-            $user = $id ? User::getOne($id) : new User();
-            $user->setLogin($this->request()->getValue('login'));
-            $user->setEmail($this->request()->getValue('registerEmail'));
-            //if ($this->request()->getValue('registerPassword') === $this->request()->getValue('registerRepeatPassword')) {
-            $user->setPassword($this->request()->getValue('registerPassword'));
-            // }
-            $user->save();
-//            $logged = true;
-//            $logged = $this->app->getAuth()->login($user->getLogin(), $user->getPassword());
-//            if ($logged) {
-//                return $this->redirect('?c=admin');//           }
-        }
-        $data = ($logged === false ? ['message' => 'Zlý login alebo heslo!'] : []);
-        return $this->html($data);
+        $id = $this->request()->getValue('id');
+        $user = $id ? User::getOne($id) : new User();
+        $user->setLogin($this->request()->getValue('login'));
+        $user->setEmail($this->request()->getValue('email'));
+        //if ($this->request()->getValue('registerPassword') === $this->request()->getValue('registerRepeatPassword')) {
+        $user->setPassword($this->request()->getValue('password'));
+        $user->save();
+        return $this->redirect("?c=home");
+    }
+
+    public
+    function users()
+    {
+        $users = User::getAll();
+        return $this->html($users);
+    }
+
+    public
+    function edit()
+    {
+        //todo: kontrolovat id
+        $userToEdit = User::getOne($this->request()->getValue('id'));
+        return $this->html($userToEdit, viewName: 'editUser');
+    }
+
+    public
+    function delete()
+    {
+        //todo: kontrolovat id
+        $userToDelete = User::getOne($this->request()->getValue('id'));
+        $userToDelete?->delete();
+        return $this->redirect("?c=auth&a=users");
     }
 }
