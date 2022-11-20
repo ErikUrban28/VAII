@@ -71,6 +71,12 @@
 <div class="row ">
     <div class="col buttons ">
         <a href="?c=auth&a=register" class="btn btn-primary registerbtn">Registracia</a>
-        <a href="<?= \App\Config\Configuration::LOGIN_URL ?>" class="btn btn-secondary loginbtn">Prihlasenie</a>
+
+        <?php /** @var \App\Core\IAuthenticator $auth */
+        if($auth->isLogged()) {?>
+        <a href="?c=auth&a=logout"  class="btn btn-secondary loginbtn">Odlhasenie</a>
+        <?php }else { ?>
+            <a href="<?= \App\Config\Configuration::LOGIN_URL ?>" class="btn btn-secondary loginbtn">Prihlasenie</a>
+        <?php } ?>
     </div>
 </div>
