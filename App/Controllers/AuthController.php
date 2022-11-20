@@ -67,9 +67,10 @@ class AuthController extends AControllerBase
         //TODO: id ak je neplatne
         $formData = $this->app->getRequest()->getPost();
         $isSubmit = isset($formData['submit']);
+        $isEdit = isset($formData['edit']);
         $login = $this->request()->getValue('login');
         $unregistered = $this->app->getAuth()->register($login);
-        if ($unregistered && $isSubmit) {
+        if ($unregistered && ($isSubmit || $isEdit)) {
             $id = $this->request()->getValue('id');
             $user = $id ? User::getOne($id) : new User();
             $user->setLogin($login);
@@ -79,8 +80,11 @@ class AuthController extends AControllerBase
             $_SESSION['user'] = $user->getLogin();
             return $this->redirect("?c=admin");
         }
-        $data = ($unregistered === false ? ['message' => 'Login je uz obsadeny'] : []);
-        return $this->html($data, viewName: 'register');
+        $formData+= ($unregistered === false ? ['message' => 'Login je uz obsadeny'] : []);
+        if($isEdit) {
+            return $this->html($formData,viewName: 'editUser');
+        }
+        return $this->html($formData, viewName: 'register');
     }
 
     public function users()
@@ -92,8 +96,8 @@ class AuthController extends AControllerBase
     public function edit()
     {
         //todo: kontrolovat id
-        $userToEdit = User::getOne($this->request()->getValue('id'));
-        return $this->html($userToEdit, viewName: 'editUser');
+        $data= ['message' => '', 'id' => $this->request()->getValue('id')];
+        return $this->html($data, viewName: 'editUser');
     }
 
     public function delete()
