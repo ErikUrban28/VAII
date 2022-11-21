@@ -31,7 +31,6 @@ class ArticlesController extends AControllerBase
 
     public function delete()
     {
-        //todo: kontrolovat id
         $postToDelete = Article::getOne($this->request()->getValue('id'));
         $postToDelete?->delete();
         return $this->redirect("?c=articles");
@@ -44,7 +43,6 @@ class ArticlesController extends AControllerBase
 
     public function store()
     {
-        //todo: kontrolovat id
         $id = $this->request()->getValue('id');
         $article = $id ? Article::getOne($id) : new Article();
         $article->setText($this->request()->getValue('text'));
@@ -60,7 +58,6 @@ class ArticlesController extends AControllerBase
 
     public function edit()
     {
-        //todo: kontrolovat id
         $postToEdit= Article::getOne($this->request()->getValue('id'));
         return $this->html($postToEdit, viewName: 'articleForm');
     }
