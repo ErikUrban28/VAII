@@ -9,7 +9,8 @@
             <form  method="post" action="?c=auth&a=register">
                 <div class="form-outline mb-4">
                     <label class="d-block">
-                        <input type="text" name="login" placeholder="Login" class="form-control" required autofocus>
+                        <input type="text" name="login" placeholder="Login" class="form-control" id="register-login" onkeyup="validateRegisterLogin()">
+                        <span id="register-login-error" class="lr"></span>
                     </label>
 
                 </div>
@@ -17,19 +18,22 @@
 
                 <div class="form-outline mb-4">
                     <label class="d-block">
-                        <input type="email" name="email" placeholder="Email" class="form-control" required autofocus>
+                        <input type="email" name="email" placeholder="Email" class="form-control" id="register-email" onkeyup="validateEmail()">
+                        <span id="register-email-error" class="lr"></span>
                     </label>
                 </div>
 
 
                 <div class="form-outline mb-4">
                     <label class="d-block">
-                        <input type="password" name="password" placeholder="Heslo" class="form-control" required autofocus>
+                        <input type="password" name="password" placeholder="Heslo" class="form-control" id="register-password" onkeyup="validatePasswordRegister()">
+                        <span id="password-login-error" class="lr"></span>
                     </label>
                 </div>
 
                 <div class="row">
-                    <button type="submit" name="submit" class="btn btn-primary btn-block reg">Registrovat</button>
+                    <button onclick="return validateRegisterSubmit()" type="submit" name="submit" class="btn btn-primary btn-block reg">Registrovat</button>
+                    <span id="register-submit" class="lr"></span>
                 </div>
 
             </form>

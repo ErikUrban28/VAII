@@ -1,3 +1,4 @@
+
 <?php
 
 /** @var Array $data */
@@ -14,12 +15,14 @@
 
             <form class="form-signin" method="post" action="<?= \App\Config\Configuration::LOGIN_URL ?>">
                 <div class="form-outline mb-4">
-                    <input type="text" id="login" placeholder="Login" name="login" class="form-control"required autofocus>
+                    <input type="text" id="login-login" placeholder="Login" name="login" class="form-control" onkeyup="validateLoginLogin()">
+                    <span id="login-login-error" class="lr"></span>
                     <label class="form-label" for="login"></label>
                 </div>
                 <div class="form-outline ">
-                    <input name="password" type="password" id="password" class="form-control"
-                           placeholder="Heslo" required autofocus>
+                    <input name="password" type="password" id="login-password" class="form-control"  onkeyup="validatePasswordLogin()"
+                           placeholder="Heslo" >
+                    <span id="login-password-error" class="lr"></span>
                     <label class="form-label" for="password"></label>
 
                 </div>
@@ -40,7 +43,8 @@
 
                 <div class="row  ">
 
-                    <button type="submit" name ="submit" class="btn btn-primary  mb-4 me-6 sign-in">Prihlasenie </button>
+                    <button onclick="return validateLoginSubmit()" type="submit" name ="submit" class="btn btn-primary  mb-4 me-6 sign-in">Prihlasenie </button>
+                    <span id="login-submit-error" class="lr"></span>
                 </div>
 
                 <div class="text-center text-nowrap">

@@ -8,9 +8,8 @@
 
     <title><?= \App\Config\Configuration::APP_NAME ?></title>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,4 +54,5 @@
 </div>
 <?= $contentHTML ?>
 </body>
+<script src="/public/js/script.js"></script>
 </html>

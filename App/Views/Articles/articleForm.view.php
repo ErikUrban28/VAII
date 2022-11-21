@@ -6,11 +6,11 @@
     <input type="hidden" name="id" value="<?= $data->getId()?>"
     <?php }?>
     <label>
-    <input type="text" name="title" placeholder="Nazov" value="<?= $data->getTitle()?> " required autofocus>
+    <input type="text" name="title" placeholder="Nazov" value="<?= $data->getTitle()?> " required autofocus minlength="2" maxlength="50">
     </label>
     <br><br>
     <label>
-        <textarea rows="5" cols="60" name="text" placeholder="Zadaj text" required autofocus>
+        <textarea rows="5" cols="60" name="text" placeholder="Zadaj text" required autofocus minlength="3" maxlength="1000">
             <?= $data->getText()?>
         </textarea>
     </label>
