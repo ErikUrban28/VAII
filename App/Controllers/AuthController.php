@@ -33,9 +33,35 @@ class AuthController extends AControllerBase
     {
         $formData = $this->app->getRequest()->getPost();
         $logged = null;
+
         if (isset($formData['submit'])) {
 
-            $this->validate($formData);
+            if ($formData['login'] == "") {
+                $data = ['message' => 'Zadaj login'];
+                return $this->html($data);
+            }
+            elseif (strlen($formData['login']) < 3) {
+                $data = ['message' => 'Zadaj login s viac ako 3 charaktermi'];
+                return $this->html($data);
+            }
+            if (strlen($formData['login']) > 30) {
+                $data = ['message' => 'Zadaj heslo s menej ako 30 charaktermi'];
+                return $this->html($data);
+            }
+
+            if ($formData['password'] == "") {
+                $data = ['message' => 'Zadaj heslo '];
+                return $this->html($data);
+            }
+            if (strlen($formData['password']) < 6) {
+                $data = ['message' => 'Zadaj heslo s viac ako 6 charaktermi'];
+                return $this->html($data);
+
+            }
+            if (strlen($formData['password']) > 35) {
+                $data = ['message' => 'Zadaj heslo s menej ako 6 charaktermi'];
+                return $this->html($data);
+            }
 
             $logged = $this->app->getAuth()->login($formData['login'], $formData['password']);
             if ($logged) {
@@ -43,7 +69,7 @@ class AuthController extends AControllerBase
             }
         }
 
-        $data = ($logged === false ? ['message' => 'Zlý login alebo heslo!'] : []);
+        $data= ($logged === false ? ['message' => 'Zlý login alebo heslo!'] : []);
         return $this->html($data);
     }
 
@@ -65,29 +91,7 @@ class AuthController extends AControllerBase
         };
     }
 
-    public function validate($formData)
-    {
-        if ($formData['login'] == "") {
-            $formData += ['message' => 'Zadaj login'];
-        }
-        if (strlen($formData['login']) < 3) {
-            $formData += ['message' => 'Zadaj login s viac ako 3 charaktermi'];
-        }
-        if (strlen($formData['login']) > 30) {
-            $formData += ['message' => 'Zadaj heslo s menej ako 30 charaktermi'];
-        }
 
-        if ($formData['password'] == "") {
-            $formData += ['message' => 'Zadaj heslo '];
-        }
-        if (strlen($formData['password']) < 6) {
-            $formData += ['message' => 'Zadaj heslo s viac ako 6 charaktermi'];
-
-        }
-        if (strlen($formData['password']) > 35) {
-            $formData += ['message' => 'Zadaj heslo s menej ako 6 charaktermi'];
-        }
-    }
 
 
     public function register()
@@ -101,12 +105,39 @@ class AuthController extends AControllerBase
             $id = $this->request()->getValue('id');
             $user = $id ? User::getOne($id) : new User();
 
-            $this->validate($formData);
+            if ($formData['login'] == "") {
+                $formData+= ['message' => 'Zadaj login'];
+                return $this->html($formData);
+            }
+            elseif (strlen($formData['login']) < 3) {
+                $formData+= ['message' => 'Zadaj login s viac ako 3 charaktermi'];
+                return $this->html($formData);
+            }
+            if (strlen($formData['login']) > 30) {
+                $formData += ['message' => 'Zadaj heslo s menej ako 30 charaktermi'];
+                return $this->html($formData);
+            }
+
+            if ($formData['password'] == "") {
+                $formData+= ['message' => 'Zadaj heslo '];
+                return $this->html($formData);
+            }
+            if (strlen($formData['password']) < 6) {
+                $formData+= ['message' => 'Zadaj heslo s viac ako 6 charaktermi'];
+                return $this->html($formData);
+
+            }
+            if (strlen($formData['password']) > 35) {
+                $formData+= ['message' => 'Zadaj heslo s menej ako 6 charaktermi'];
+                return $this->html($formData);
+            }
             if ($formData['email'] == "") {
                 $formData += ['message' => 'Zadaj email'];
+                return $this->html($formData);
             }
             if (!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $formData['email'])) {
-                $formData += ['message' => 'Zadaj email v spravnom formate'];
+                $formData+= ['message' => 'Zadaj email v spravnom formate'];
+                return $this->html($formData);
             }
 
             $user->setLogin($login);
