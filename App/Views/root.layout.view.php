@@ -6,7 +6,7 @@
 <html lang="sk">
 <head>
 
-    <title><?= \App\Config\Configuration::APP_NAME ?></title>
+
 
 
 
@@ -19,8 +19,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/style.css">
+    <title><?= "WatchFest".": ". (isset($_GET['a']) ? ucfirst($_GET['a']) : ucfirst($_GET['c']))?></title>
 
-    <title><?= \App\Config\Configuration::APP_NAME ?></title>
 </head>
 <body>
 <div class="container-fluid  ">
@@ -34,18 +34,17 @@
 
                 <div class="col d-flex justify-content-around">
                 <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link" href="?c=home">Domov</a></li>
-                    <li class="nav-item"><a class="nav-link" href="?c=home&a=about">Autor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="?c=articles&a=articles">Clanky</a></li>
-                    <li class="nav-item"><a class="nav-link registracia"
-                                            href="?c=auth&a=register">Registracia</a></li>
+                    <li class="nav-item active"><a id="home_bar" class="nav-link" href="?c=home" >Domov</a></li>
+                    <li class="nav-item"><a id="about_bar" class="nav-link" href="?c=home&a=about">Autor</a></li>
+                    <li class="nav-item"><a id="articles_bar" class="nav-link" href="?c=articles&a=articles">Clanky</a></li>
+                    <li class="nav-item"><a id="registration_bar" class="nav-link registracia"href="?c=auth&a=register">Registracia</a></li>
                     <?php if ($auth->isLogged()) { ?>
-                        <li class="nav-item"><a class="nav-link odhlasenie"href="?c=auth&a=logout">Odhlásenie</a></li>
-                        <li class="nav-item"><a class="nav-link odhlasenie"href="?c=auth&a=users">Pouzivatelia</a></li>
-                        <li class="nav-item"><a class="nav-link">
+                        <li class="nav-item"><a id="logout_bar" class="nav-link odhlasenie"href="?c=auth&a=logout">Odhlásenie</a></li>
+                        <li class="nav-item"><a id="users_bar" class="nav-link odhlasenie"href="?c=auth&a=users">Pouzivatelia</a></li>
+                        <li class="nav-item"><a id="user_bar" class="nav-link">
                                 <?= $auth->getLoggedUserName()?></a></li>
                     <?php } else { ?>
-                        <li class="nav-item"><a class="nav-link prihlasenie" href="?c=auth">Prihlasenie</a></li>
+                        <li class="nav-item"><a id="login_bar" class="nav-link prihlasenie" href="?c=auth">Prihlasenie</a></li>
                     <?php } ?>
                 </ul>
         </nav>

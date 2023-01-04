@@ -113,7 +113,9 @@ function validatePasswordRegister() {
 function validateRegisterSubmit() {
     if (!validatePasswordRegister() || !validateRegisterLogin() || !validateEmail()) {
         registerSubmit.innerHTML = "Chybne vyplnene udaje";
-        setTimeout(function (){registerSubmit.style.display ='none';},1000)
+        setTimeout(function () {
+            registerSubmit.style.display = 'none';
+        }, 1000)
         return false;
     }
 }
@@ -121,7 +123,9 @@ function validateRegisterSubmit() {
 function validateLoginSubmit() {
     if (!validateLoginLogin() || !validatePasswordLogin()) {
         loginSubmit.innerHTML = "Chybne vyplnene udaje";
-        setTimeout(function (){loginSubmit.style.display ='none';},1000)
+        setTimeout(function () {
+            loginSubmit.style.display = 'none';
+        }, 1000)
         return false;
     }
 }

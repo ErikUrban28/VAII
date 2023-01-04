@@ -1,7 +1,7 @@
 
 <div class="row">
     <div class="col d-flex justify-content-md-center o-mne-nadpis">
-        <h1 class="display-1 ">Vitajte na stranke Watchfest</h1>
+        <h1 class="display-1 ">Vitajte na stranke WatchFest</h1>
     </div>
 </div>
 

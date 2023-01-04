@@ -96,6 +96,7 @@ class AuthController extends AControllerBase
 
     public function register()
     {
+        //TODO: oprav routing pri edite
         $formData = $this->app->getRequest()->getPost();
         $isSubmit = isset($formData['submit']);
         $isEdit = isset($formData['edit']);
