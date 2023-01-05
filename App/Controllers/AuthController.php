@@ -146,6 +146,7 @@ class AuthController extends AControllerBase
             $user->setHash($this->app->getAuth()->createHash($this->request()->getValue('password')));
             $user->save();
             if ($isEdit) {
+                $_SESSION['user'] = $user->getLogin();
                 return $this->redirect("?c=auth&a=users");
             }
             $_SESSION['user'] = $user->getLogin();
@@ -174,6 +175,6 @@ class AuthController extends AControllerBase
     {
         $userToDelete = User::getOne($this->request()->getValue('id'));
         $userToDelete?->delete();
-        return $this->redirect("?c=auth&a=users");
+        return $userToDelete->getLogin() === $this->app->getAuth()->getLoggedUserName() ? $this->logout() : $this->redirect("?c=auth&a=users");
     }
 }

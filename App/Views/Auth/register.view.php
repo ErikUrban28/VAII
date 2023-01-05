@@ -27,13 +27,13 @@
                 <div class="form-outline mb-4">
                     <label class="d-block">
                         <input type="password" name="password" placeholder="Heslo" class="form-control" id="register-password" onkeyup="validatePasswordRegister()">
-                        <span id="password-login-error" class="lr"></span>
+                        <span id="register-password-error" class="lr"></span>
                     </label>
                 </div>
 
                 <div class="row">
                     <button onclick="return validateRegisterSubmit()" type="submit" name="submit" class="btn btn-primary btn-block reg">Registrovat</button>
-                    <span id="register-submit" class="lr"></span>
+                    <span id="register-submit-error" class="lr"></span>
                 </div>
 
             </form>

@@ -7,10 +7,6 @@
 <head>
 
 
-
-
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/style.css">
-    <title><?= "WatchFest". (isset($_GET['a']) ? ": ".ucfirst($_GET['a']) : (isset($_GET['c']) ?  ": ".ucfirst($_GET['c']) :""))?></title>
+    <title><?= "WatchFest". (isset($_GET['a']) ? ": ".ucfirst($_GET['a']) : (isset($_GET['c']) ?  ": ".ucfirst($_GET['c']) :": Home"))?></title>
 
 </head>
 <body>
@@ -41,8 +37,7 @@
                     <?php if ($auth->isLogged()) { ?>
                         <li class="nav-item"><a id="logout_bar" class="nav-link odhlasenie"href="?c=auth&a=logout">Odhlásenie</a></li>
                         <li class="nav-item"><a id="users_bar" class="nav-link odhlasenie"href="?c=auth&a=users">Pouzivatelia</a></li>
-                        <li class="nav-item"><a id="user_bar" class="nav-link">
-                                <?= $auth->getLoggedUserName()?></a></li>
+                        <li class="nav-item"><a id="user_bar" class="nav-link" href="?c=auth&a=users"><?= $auth->getLoggedUserName()?> </a></li>
                     <?php } else { ?>
                         <li class="nav-item"><a id="login_bar" class="nav-link prihlasenie" href="?c=auth">Prihlasenie</a></li>
                     <?php } ?>

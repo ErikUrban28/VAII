@@ -2,8 +2,8 @@ let loginLoginError = document.getElementById('login-login-error');
 let loginPasswordError = document.getElementById('login-password-error');
 let registerLoginError = document.getElementById('register-login-error');
 let registerEmailError = document.getElementById('register-email-error');
-let registerPasswordError = document.getElementById('password-login-error');
-let registerSubmit = document.getElementById('password-login-error');
+let registerPasswordError = document.getElementById('register-password-error');
+let registerSubmit = document.getElementById('register-submit-error');
 let loginSubmit = document.getElementById('login-submit-error');
 
 function validateLoginLogin() {
@@ -59,7 +59,7 @@ function validateEmail() {
         registerEmailError.innerHTML = 'Email musi byt vyplneny';
         return false;
     }
-    if (!(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm.test(email))) {
+    if (!(/^[A-Za-z0-9_]+@[A-Za-z0-9.-]+$/gm.test(email))) {
         registerEmailError.innerHTML = 'Neplany Email';
         return false;
     }
@@ -112,20 +112,22 @@ function validatePasswordRegister() {
 
 function validateRegisterSubmit() {
     if (!validatePasswordRegister() || !validateRegisterLogin() || !validateEmail()) {
+        registerSubmit.style.display = 'inline';
         registerSubmit.innerHTML = "Chybne vyplnene udaje";
         setTimeout(function () {
             registerSubmit.style.display = 'none';
-        }, 1000)
+        }, 500)
         return false;
     }
 }
 
 function validateLoginSubmit() {
     if (!validateLoginLogin() || !validatePasswordLogin()) {
+        registerSubmit.style.display = 'inline';
         loginSubmit.innerHTML = "Chybne vyplnene udaje";
         setTimeout(function () {
             loginSubmit.style.display = 'none';
-        }, 1000)
+        }, 500)
         return false;
     }
 }

@@ -16,11 +16,11 @@ foreach ($data as $user ){?>
         <div class="row m-0 p-0">
             <div class="col-xl-12  justify-content-between d-flex mt-2">
                 <div>
-                    <a href="?c=auth&a=edit&id=<?= $user->getId() ?>" class="btn btn-danger ">Upravit</a>
+                    <a href="?c=auth&a=edit&id=<?= $user->getId() ?>" class="btn btn-danger " id="<?= $user->getLogin()."-edit"?>">Upravit</a>
                 </div>
 
                 <div>
-                <a href="?c=auth&a=delete&id=<?= $user->getId()?>" class="btn btn-light ">Zmazat</a>
+                <a href="?c=auth&a=delete&id=<?= $user->getId()?>" class="btn btn-light " id="<?= $user->getLogin()."-delete"?>">Zmazat</a>
                 </div>
             </div>
         </div>
