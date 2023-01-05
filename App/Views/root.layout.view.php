@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/style.css">
-    <title><?= "WatchFest".": ". (isset($_GET['a']) ? ucfirst($_GET['a']) : ucfirst($_GET['c']))?></title>
+    <title><?= "WatchFest". (isset($_GET['a']) ? ": ".ucfirst($_GET['a']) : (isset($_GET['c']) ?  ": ".ucfirst($_GET['c']) :""))?></title>
 
 </head>
 <body>
