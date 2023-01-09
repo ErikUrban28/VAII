@@ -8,7 +8,6 @@ let loginSubmit = document.getElementById('login-submit-error');
 
 function validateLoginLogin() {
     let login = document.getElementById('login-login').value;
-
     if (login.length === 0) {
         loginLoginError.innerHTML = 'Login musi byt vyplneny';
         return false;
@@ -80,7 +79,7 @@ function validatePasswordLogin() {
         return false;
     }
     if (pass.length < 6) {
-        loginPasswordError.innerHTML = 'Heslo musi mat viac ako 6 znakov';
+        loginPasswordError.innerHTML = 'Heslo musi mat viac ako 5 znakov';
         return false;
     }
     if (pass.length >= 35) {
@@ -123,7 +122,7 @@ function validateRegisterSubmit() {
 
 function validateLoginSubmit() {
     if (!validateLoginLogin() || !validatePasswordLogin()) {
-        registerSubmit.style.display = 'inline';
+        loginSubmit.style.display = 'inline';
         loginSubmit.innerHTML = "Chybne vyplnene udaje";
         setTimeout(function () {
             loginSubmit.style.display = 'none';

@@ -36,6 +36,10 @@ class AuthController extends AControllerBase
 
         if (isset($formData['submit'])) {
 
+            if ($formData['login'] == "" && $formData['password'] == "") {
+                $data = ['message' => "Nevyplnene udaje"];
+                return $this->html($data);
+            }
             if ($formData['login'] == "") {
                 $data = ['message' => 'Zadaj login'];
                 return $this->html($data);

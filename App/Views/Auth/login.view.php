@@ -43,7 +43,7 @@
 
                 <div class="row  ">
 
-                    <button onclick="return validateLoginSubmit()" type="submit" name ="submit" class="btn btn-primary  mb-4 me-6 sign-in">Prihlasenie </button>
+                    <button onclick="return validateLoginSubmit()" type="submit" name ="submit" class="btn btn-primary  mb-4 me-6 sign-in">Prihlasiť </button>
                     <span id="login-submit-error" class="lr"></span>
                 </div>
 
